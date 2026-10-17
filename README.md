@@ -12,6 +12,46 @@ A portable Agent Skills workflow for **Research → Plan → Implement**, with p
 - `scripts/test_rpi.py`: CLI unit tests including bypass attempts and missing evidence.
 - `examples/`: realistic task prompts, expected skills behavior, and testable evaluation cases.
 
+## Install directly from GitHub
+
+**Agent Skills CLI (recommended):**
+
+```bash
+npx skills add maxchichar/rpi-production-engineering
+```
+
+For a global installation:
+
+```bash
+npx skills add maxchichar/rpi-production-engineering -g
+```
+
+The CLI discovers the repository's `SKILL.md` and prompts for supported agents and installation scope. Check the CLI's current options with `npx skills --help`. Review the repository before installing agent instructions.
+
+**Manual Git installation (from your project's root):**
+
+Codex / Agent Skills convention:
+
+```bash
+mkdir -p .agents/skills
+git clone https://github.com/maxchichar/rpi-production-engineering.git .agents/skills/rpi-production-engineering
+```
+
+Claude Code:
+
+```bash
+mkdir -p .claude/skills
+git clone https://github.com/maxchichar/rpi-production-engineering.git .claude/skills/rpi-production-engineering
+```
+
+Update a manual Codex installation with:
+
+```bash
+git -C .agents/skills/rpi-production-engineering pull --ff-only
+```
+
+Manual clones are separate Git repositories; avoid accidentally committing nested repositories into the host project. The host agent must support the selected skill directory and may require restarting or reloading skills.
+
 ## Install in a repository
 
 **Codex / agents following the Agent Skills convention:**
@@ -82,4 +122,4 @@ The playbooks are inspired by the open Agent Skills format, NIST SSDF, OWASP ASV
 
 ## Distribution
 
-Version: `1.0.0`. License: MIT. This bundle is suitable for version control. Review before installing in an environment with credentialed or production-capable tools. Do not commit secret-bearing logs or customer data as evidence.
+Version: `1.0.0`. License: Apache-2.0. This bundle is suitable for version control. Review before installing in an environment with credentialed or production-capable tools. Do not commit secret-bearing logs or customer data as evidence.

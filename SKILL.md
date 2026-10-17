@@ -8,7 +8,7 @@ description: >-
   automated testing, quality gates, migrations, operations, or safe releases.
   Adapts rigor to patch, standard, and critical-risk work. Produces an
   evidence-backed delivery record instead of unverified completion claims.
-license: MIT
+license: Apache-2.0
 ---
 
 # RPI — Production Engineering
